@@ -1,0 +1,111 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans HK', sans-serif;
+    background: #fcf594;
+}
+
+.container-head {
+    padding: 1rem;
+    box-shadow: 0 3px 5px #52437b;
+}
+
+.main-head-title {
+    font-size: 2rem;
+    color: #52437b;
+}
+
+.navigation-bar-list {
+    padding-left: 0;
+}
+
+.navigation-bar-list li {
+    list-style-type: none;
+    display: block;
+    padding: 1rem 0;
+    color: #52437b;
+    font-size: 2rem;
+    width: 12rem;
+    height: auto;
+}
+
+.navigation-bar-list li:hover {
+    border: 1px solid #52437b;
+    cursor: pointer;
+    width: 12rem;
+    height: auto;
+    padding: 1rem;
+}
+
+.new-game-button {
+    border: none;
+    border-radius: 0.3rem;
+    background: #ff7a8a;
+    color: #52437b;
+    font-size: 2.5rem;
+    display: block;
+    padding: 0.5rem;
+    margin: 1.5rem auto;
+    cursor: pointer;
+}
+
+.new-game-button:hover {
+    background: #fcf594;
+    border: solid 1px #52437b;
+}
+
+.game-images {
+    display: flex;
+    justify-content: space-around;
+}
+
+.image {
+    width: 15rem;
+    height: auto;
+    padding: 0.5rem 1.5rem;
+}
+
+.image:hover {
+    border: 1px solid #52437b;
+    box-shadow: 0 3px 5px #52437b;
+    cursor: pointer;
+}
+
+.game-table {
+    box-shadow: 0 3px 5px #52437b;
+}
+
+.game-table-head {
+    font-size: 2rem;
+    color: #52437b;
+    padding: 1rem;
+}
+
+.game-table-head h3 {
+    margin: 0;
+}
+
+.about {
+    font-size: 1.5rem;
+    color: #52437b;
+    padding: 2rem 1rem;
+    box-shadow: 0 3px 5px #52437b;
+}
+
+.about h3 {
+    font-size: 1.8rem;
+}
+
+.footer-container {
+    font-size: 1.5rem;
+    color: #52437b;
+    padding: 2rem 1rem;
+    box-shadow: 0 3px 5px #52437b;
+}
