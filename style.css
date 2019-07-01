@@ -34,6 +34,7 @@ body {
     font-size: 2rem;
     width: 12rem;
     height: auto;
+
 }
 
 .navigation-bar-list li:hover {
@@ -61,6 +62,23 @@ body {
     border: solid 1px #52437b;
 }
 
+.game-nick {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.5rem;
+    color: #52437b;
+    margin: 2.5rem;
+}
+
+.game-outcome {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+    margin: 2.5rem auto;
+    font-size: 2rem;
+    color: #52437b;
+}
+
 .game-images {
     display: flex;
     justify-content: space-around;
@@ -86,6 +104,12 @@ body {
     font-size: 2rem;
     color: #52437b;
     padding: 1rem;
+}
+
+.game-table-list {
+    font-size: 1.5rem;
+    color: #52437b;
+    padding: 1rem 1rem;
 }
 
 .game-table-head h3 {

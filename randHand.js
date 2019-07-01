@@ -1,27 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('elements loaded');
-
-
-    const btnNewGame = document.querySelector('.new-game');
-    const btnPaper = document.querySelectorAll('.image')[0];
-    const btnRock = document.querySelectorAll('.image')[1];
-    const btnScissors = document.querySelectorAll('.image')[2];
-
-    let playerChoose;
-
-    btnNewGame.addEventListener('click', function(){
-        console.log('click btnNewGame')
-    })
-
-    btnPaper.addEventListener('click', function() {
-        playerChoose = 'paper';
-        console.log('click btnPaper', playerChoose);
-    })
-
 let rand;
 let randHand;
-
-function AiRandom() {
+function AiRandom () {
     rand = Math.floor(Math.random() * 3);
     if (rand === 0) {
         randHand = 'p';
@@ -31,7 +10,7 @@ function AiRandom() {
         randHand = 's';
     }
 
-    return (randHand);
+    return(randHand);
 }
 
 let AiChoose = AiRandom();
@@ -86,3 +65,4 @@ function outCompare(AiChoose, playerChoose) {
 }
 
 console.log(outCompare(AiChoose, playerChoose));
+
