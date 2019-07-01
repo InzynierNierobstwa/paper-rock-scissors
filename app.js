@@ -7,82 +7,82 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnRock = document.querySelectorAll('.image')[1];
     const btnScissors = document.querySelectorAll('.image')[2];
 
-    let playerChoose;
+    let playerScore = document.querySelector('.game-outcome-player');
+    let AiScore = document.querySelector('.game-outcome-ai');
 
-    btnNewGame.addEventListener('click', function(){
-        console.log('click btnNewGame')
-    })
-
-    btnPaper.addEventListener('click', function() {
-        playerChoose = 'paper';
-        console.log('click btnPaper', playerChoose);
-    })
-
-let rand;
-let randHand;
-
-function AiRandom() {
-    rand = Math.floor(Math.random() * 3);
-    if (rand === 0) {
-        randHand = 'p';
-    } else if (rand === 1) {
-        randHand = 'r';
-    } else {
-        randHand = 's';
+    function AiRandom() {
+        let rand;
+        let randHand;
+        rand = Math.floor(Math.random() * 3);
+        if (rand === 0) {
+            randHand = 'p';
+        } else if (rand === 1) {
+            randHand = 'r';
+        } else {
+            randHand = 's';
+        }
+        return (randHand);
     }
 
-    return (randHand);
-}
+    let outcomePlayer = 0;
+    let outcomeAi = 0;
+    let allGames = 0;
 
-let AiChoose = AiRandom();
-let playerChoose = 'p';
-let outcomePlayer = 0;
-let outcomeAi = 0;
-let allGames = 0; // values needed for outcomes
-
-console.log(AiChoose + playerChoose);
-
-function win() {
-    console.log('player win!');
-    outcomePlayer += 1;
-    allGames += 1;
-}
-
-function lose() {
-    console.log('player lose!');
-    outcomeAi += 1;
-    allGames += 1;
-}
-
-function draw() {
-    console.log('It\'s a draw!');
-    allGames += 1;
-}
-
-function outCompare(AiChoose, playerChoose) {
-    switch (AiChoose + playerChoose) {
-        case 'rs':
-        case 'pr':
-        case 'sp':
-            win();
-            break;
-        case 'sr':
-        case 'rp':
-        case 'ps':
-            lose();
-            console.log('player lose');
-            outcomeAi += 1;
-            allGames += 1;
-            break;
-        case 'ss':
-        case 'rr':
-        case 'pp':
-            draw();
-            console.log('it\'s a draw');
-            allGames += 1;
-            break;
+    function win() {
+        console.log('player win!');
+        outcomePlayer += 1;
+        playerScore.innerHTML = outcomePlayer;
+        allGames += 1;
     }
-    return (outcomeAi, outcomePlayer, allGames);
-}
 
-console.log(outCompare(AiChoose, playerChoose));
+    function lose() {
+        console.log('player lose!');
+        outcomeAi += 1;
+        AiScore.innerHTML = outcomeAi;
+        allGames += 1;
+    }
+
+    function draw() {
+        console.log('It\'s a draw!');
+        allGames += 1;
+    }
+
+    function game(userChoice) {
+        let AiChoose = AiRandom();
+        switch (AiChoose + userChoice) {
+            case 'rs':
+            case 'pr':
+            case 'sp':
+                win();
+                break;
+            case 'sr':
+            case 'rp':
+            case 'ps':
+                lose();
+                break;
+            case 'ss':
+            case 'rr':
+            case 'pp':
+                draw();
+                break;
+        }
+        return (outcomeAi, outcomePlayer, allGames);
+    }
+
+    function main() {
+    btnPaper.addEventListener('click', function () {
+        game('p');
+        console.log('click btnPaper');
+    })
+    btnRock.addEventListener('click', function () {
+        game('r');
+        console.log('click btnRock');
+    })
+    btnScissors.addEventListener('click', function () {
+        game('s');
+        console.log('click btnScissors');
+    })}
+
+    main();
+
+})
