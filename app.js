@@ -85,4 +85,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     main();
 
+    function reset() {
+        btnNewGame.addEventListener('click', function() {
+            console.log('click btnNewGame');
+            location.reload();
+        })
+    }
+
+    reset();
 })
